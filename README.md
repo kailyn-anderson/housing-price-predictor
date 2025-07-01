@@ -10,7 +10,7 @@ A simple and interactive web app built with [Streamlit](https://streamlit.io/) t
 
 ## ✨ Demo
 
-Try the live app: [🚀 Launch Streamlit App](#)  
+Try the live app: [🚀 Launch Streamlit App](https://housing-price-predictor-dl6dawexdhx2vmeejeeulz.streamlit.app/)  
 *(Replace `#` with the actual URL if deploying on Streamlit Cloud, Hugging Face Spaces, etc.)*
 
 ---
