@@ -42,11 +42,11 @@ model.fit(X, y)
 
 
 # Correlation heatmap
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import seaborn as sns
 
 corr = train_clean.corr()
-plt.figure(figsize=(12,10))
+# plt.figure(figsize=(12,10))
 sns.heatmap(corr[['SalePrice']].sort_values('SalePrice', ascending=False), annot=True)
 
 
