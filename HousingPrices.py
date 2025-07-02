@@ -6,19 +6,16 @@ import pandas as pd
 train = pd.read_csv("train.csv")
 test = pd.read_csv("test.csv")
 
-print(train.shape)
-train.head()
-
-# Only keep numeric columns for a quick test
+# Only keep numeric columns
 train_numeric = train.select_dtypes(include=['number'])
 
 # Drop rows with missing values
 train_clean = train_numeric.dropna()
 
 # Split features and target
-# All features
-# X = train_clean.drop('SalePrice', axis=1)
-# y = train_clean['SalePrice']
+    # If we wanted to use all features:
+    # X = train_clean.drop('SalePrice', axis=1)
+    # y = train_clean['SalePrice']
 
 features = ['GrLivArea', 'OverallQual', 'GarageCars', 'TotalBsmtSF', 'YearBuilt']
 X = train_clean[features]
@@ -53,11 +50,8 @@ X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_st
 model = RandomForestRegressor(n_estimators=100, random_state=42)
 model.fit(X_train, y_train)
 
-preds = model.predict(X_val)
-rmse = np.sqrt(mean_squared_error(y_val, preds))
-print(f"RMSE: {rmse}")
+# Save the model after training
 
-# Save the model after training (in notebook or script)
 import joblib
 joblib.dump(model, 'housing prices')
 
