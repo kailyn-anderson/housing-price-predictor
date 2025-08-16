@@ -51,7 +51,7 @@ model = RandomForestRegressor(n_estimators=100, random_state=42)
 model.fit(X_train, y_train)
 
 # Save the model after training
-
+    # reduces compilation time when running web app because trained model is already saved
 import joblib
 joblib.dump(model, 'housing prices')
 
